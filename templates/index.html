@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- ========================= -->
+<!-- HERO HEADER -->
+<!-- ========================= -->
+<section class="p-5 rounded shadow-sm bg-white mb-5">
+  <div class="row align-items-center">
+    
+    <div class="col-lg-7">
+      <h1 class="fw-bold text-primary mb-3">Dashboard Penggunaan Ruang Kelas UKDW</h1>
+      <p class="text-muted fs-5">
+        Platform analitik yang membantu pengelola akademik memantau efisiensi penggunaan ruang kelas, 
+        pemanfaatan kapasitas, dan distribusi jadwal secara lebih akurat dan informatif.
+      </p>
+
+      <a href="/dashboard" class="btn btn-primary btn-lg mt-2 shadow-sm px-4">
+        Lihat Dashboard →
+      </a>
+    </div>
+
+    <div class="col-lg-5 text-center">
+      <img src="https://cdn-icons-png.flaticon.com/512/711/711284.png"
+           alt="Classroom Analytics"
+           class="img-fluid"
+           style="max-width: 260px;">
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- ========================= -->
+<!-- SUMMARY CARDS -->
+<!-- ========================= -->
+<h4 class="fw-bold text-primary mb-3">Ringkasan Penggunaan Ruang</h4>
+
+<div class="row g-4 mb-5">
+
+  <div class="col-md-3">
+    <div class="summary-card p-4 text-center shadow-sm rounded">
+      <div class="small text-muted fw-semibold mb-1">Ruang Efisien</div>
+      <div class="fw-bold text-primary fs-3">{{ summary.efisien }}</div>
+      <div class="small text-muted">{{ summary.efisien_pct }}% dari total</div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="summary-card p-4 text-center shadow-sm rounded">
+      <div class="small text-muted fw-semibold mb-1">Ruang Cukup Efisien</div>
+      <div class="fw-bold text-info fs-3">{{ summary.cukup }}</div>
+      <div class="small text-muted">{{ summary.cukup_pct }}% dari total</div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="summary-card p-4 text-center shadow-sm rounded">
+      <div class="small text-muted fw-semibold mb-1">Ruang Tidak Efisien</div>
+      <div class="fw-bold text-danger fs-3">{{ summary.tidak }}</div>
+      <div class="small text-muted">{{ summary.tidak_pct }}% dari total</div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="summary-card p-4 text-center shadow-sm rounded">
+      <div class="small text-muted fw-semibold mb-1">Total Ruang</div>
+      <div class="fw-bold text-dark fs-3">{{ summary.total }}</div>
+      <div class="small text-muted">100%</div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<!-- ========================= -->
+<!-- TUJUAN DASHBOARD -->
+<!-- ========================= -->
+<section class="bg-white p-5 shadow-sm rounded mb-5">
+  <h4 class="fw-bold text-primary mb-3">Tujuan Dibuatnya Dashboard</h4>
+
+  <p class="text-muted fs-6 mb-4">
+    Dashboard ini dirancang untuk memberikan wawasan cepat dan akurat mengenai penggunaan ruang kelas di UKDW.
+    Dengan analitik visual, pihak akademik dapat mengambil keputusan yang tepat berdasarkan data penggunaan ruang.
+  </p>
+
+  <ul class="fs-6 text-muted">
+    <li class="mb-2">📌 Memantau efisiensi penggunaan ruang berdasarkan kapasitas & jumlah peserta.</li>
+    <li class="mb-2">📌 Mengidentifikasi prodi dengan pemanfaatan ruang optimal.</li>
+    <li class="mb-2">📌 Melihat sebaran penggunaan ruang berdasarkan hari & sesi.</li>
+    <li class="mb-2">📌 Mengoptimalkan penjadwalan ruang untuk semester berikutnya.</li>
+  </ul>
+</section>
+
+
+
+
+<!-- ========================= -->
+<!-- FITUR-FITUR DASHBOARD -->
+<!-- ========================= -->
+<section class="p-5 rounded shadow-sm bg-white mb-5">
+  <h4 class="fw-bold text-primary mb-4">Fitur Utama Dashboard</h4>
+
+  <div class="row g-4">
+
+    <div class="col-md-6">
+      <div class="p-4 border rounded shadow-sm h-100 bg-light">
+        <h5 class="fw-bold text-primary">📊 Efisiensi Ruang</h5>
+        <p class="text-muted">
+          Menampilkan ruang mana yang paling dan paling tidak efisien berdasarkan jumlah peserta dan kapasitas.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="p-4 border rounded shadow-sm h-100 bg-light">
+        <h5 class="fw-bold text-primary">🏫 Efisiensi Program Studi</h5>
+        <p class="text-muted">
+          Mengukur pemanfaatan ruang oleh masing-masing prodi untuk memastikan distribusi yang adil dan optimal.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="p-4 border rounded shadow-sm h-100 bg-light">
+        <h5 class="fw-bold text-primary">📅 Efisiensi Hari & Sesi</h5>
+        <p class="text-muted">
+          Visualisasi intensitas penggunaan ruang di tiap hari dan sesi, lengkap dengan filter interaktif.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="p-4 border rounded shadow-sm h-100 bg-light">
+        <h5 class="fw-bold text-primary">📈 Persentase Penggunaan Ruang</h5>
+        <p class="text-muted">
+          Menunjukkan berapa persen ruang yang terpakai dalam hari & sesi tertentu, termasuk tampilan 2×2 in-line.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- ========================= -->
+<!-- TENTANG DATA -->
+<!-- ========================= -->
+<section class="p-5 rounded shadow-sm bg-white mb-5">
+  <h4 class="fw-bold text-primary mb-3">Tentang Data</h4>
+
+  <p class="text-muted fs-6">
+    Data diambil dari Google Sheets resmi UKDW yang berisi daftar ruang kelas dan jadwal penggunaan ruang.
+    Dashboard melakukan perhitungan otomatis meliputi:
+  </p>
+
+  <ul class="text-muted">
+    <li>Efisiensi = Peserta / Kapasitas</li>
+    <li>Persentase Penggunaan Ruang = Jumlah Ruang Terpakai / Total Ruang</li>
+    <li>Filter Tahun Ajaran: 2023/2024 & 2024/2025</li>
+    <li>Rekap per hari: Senin – Jumat</li>
+  </ul>
+</section>
+
+{% endblock %}

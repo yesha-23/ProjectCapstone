@@ -1,0 +1,122 @@
+/* ===========================
+   GLOBAL LAYOUT
+   =========================== */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.bg-light-blue {
+  background: #eef5ff;
+}
+
+.main-navbar {
+  background: #0d6efd;
+}
+
+
+/* ===========================
+   NAVBAR
+   =========================== */
+.nav-link {
+  color: white !important;
+  opacity: 0.8;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+.active-nav {
+  font-weight: bold;
+  text-decoration: underline;
+  opacity: 1 !important;
+}
+
+
+/* ===========================
+   SUMMARY CARDS
+   =========================== */
+.summary-card {
+  background: white;
+  border-left: 5px solid #0d6efd;
+  transition: 0.25s;
+  border-radius: 6px;
+}
+
+.summary-card:hover {
+  background: #eaf2ff;
+}
+
+.summary-card .fs-3 {
+  font-weight: 700;
+}
+
+.summary-card small {
+  font-size: 0.8rem;
+}
+
+
+/* ===========================
+   HERO ANIMATION (Beranda)
+   =========================== */
+.hero-illustration {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+
+/* ===========================
+   CHART CARDS – COMPACT MODE
+   =========================== */
+.card {
+  border: none;
+  border-radius: 12px;
+  padding-top: 12px !important;       /* memberi ruang untuk judul */
+  padding-bottom: 6px !important;
+}
+
+.card h6,
+.card h5 {
+  font-size: 0.95rem;
+  margin-bottom: 8px !important;      /* jarak aman */
+}
+
+
+/* ===========================
+   PLOTLY GRAPH FIX
+   =========================== */
+.chart-container {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.plotly-graph-div {
+  padding: 0 !important;
+  margin: -4px 0 -6px 0 !important;   /* tidak menabrak judul */
+}
+
+.plot-container {
+  padding-top: 0 !important;
+}
+
+
+/* ===========================
+   GRID & SPACING
+   =========================== */
+.row {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* Membuat panel grafik lebih kompak agar muat 1 halaman */
+.compact-chart {
+  transform: scale(0.88);
+  transform-origin: top left;
+  height: 360px;
+  overflow: hidden;
+}
