@@ -30,50 +30,81 @@
 </section>
 
 
-
-
 <!-- ========================= -->
 <!-- SUMMARY CARDS -->
 <!-- ========================= -->
-<h4 class="fw-bold text-primary mb-3">Ringkasan Penggunaan Ruang</h4>
+<h4 class="fw-bold text-primary mb-4">Ringkasan Penggunaan Ruang</h4>
 
-<div class="row g-4 mb-5">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4 mb-5">
 
-  <div class="col-md-3">
-    <div class="summary-card p-4 text-center shadow-sm rounded">
-      <div class="small text-muted fw-semibold mb-1">Ruang Efisien</div>
-      <div class="fw-bold text-primary fs-3">{{ summary.efisien }}</div>
-      <div class="small text-muted">{{ summary.efisien_pct }}% dari total</div>
+  <!-- Sangat Efektif -->
+  <div class="col">
+    <div class="summary-card p-4 text-center shadow-sm rounded border-start border-success border-4 h-100">
+      <div class="small text-muted fw-semibold mb-1">Sangat Efektif</div>
+      <div class="fw-bold text-success fs-3">
+        {{ summary.sangat_efektif | default(0) }}
+      </div>
+      <div class="small text-muted">100% kapasitas</div>
+      <div class="small text-muted">
+        {{ summary.sangat_efektif_pct | default(0) }}% dari total
+      </div>
     </div>
   </div>
 
-  <div class="col-md-3">
-    <div class="summary-card p-4 text-center shadow-sm rounded">
-      <div class="small text-muted fw-semibold mb-1">Ruang Cukup Efisien</div>
-      <div class="fw-bold text-info fs-3">{{ summary.cukup }}</div>
-      <div class="small text-muted">{{ summary.cukup_pct }}% dari total</div>
+  <!-- Efektif -->
+  <div class="col">
+    <div class="summary-card p-4 text-center shadow-sm rounded border-start border-primary border-4 h-100">
+      <div class="small text-muted fw-semibold mb-1">Efektif</div>
+      <div class="fw-bold text-primary fs-3">
+        {{ summary.efektif | default(0) }}
+      </div>
+      <div class="small text-muted">85% – 99%</div>
+      <div class="small text-muted">
+        {{ summary.efektif_pct | default(0) }}% dari total
+      </div>
     </div>
   </div>
 
-  <div class="col-md-3">
-    <div class="summary-card p-4 text-center shadow-sm rounded">
-      <div class="small text-muted fw-semibold mb-1">Ruang Tidak Efisien</div>
-      <div class="fw-bold text-danger fs-3">{{ summary.tidak }}</div>
-      <div class="small text-muted">{{ summary.tidak_pct }}% dari total</div>
+  <!-- Cukup Efektif -->
+  <div class="col">
+    <div class="summary-card p-4 text-center shadow-sm rounded border-start border-warning border-4 h-100">
+      <div class="small text-muted fw-semibold mb-1">Cukup Efektif</div>
+      <div class="fw-bold text-warning fs-3">
+        {{ summary.cukup | default(0) }}
+      </div>
+      <div class="small text-muted">65% – 84%</div>
+      <div class="small text-muted">
+        {{ summary.cukup_pct | default(0) }}% dari total
+      </div>
     </div>
   </div>
 
-  <div class="col-md-3">
-    <div class="summary-card p-4 text-center shadow-sm rounded">
+  <!-- Tidak Efektif -->
+  <div class="col">
+    <div class="summary-card p-4 text-center shadow-sm rounded border-start border-danger border-4 h-100">
+      <div class="small text-muted fw-semibold mb-1">Tidak Efektif</div>
+      <div class="fw-bold text-danger fs-3">
+        {{ summary.tidak | default(0) }}
+      </div>
+      <div class="small text-muted">≤ 65%</div>
+      <div class="small text-muted">
+        {{ summary.tidak_pct | default(0) }}% dari total
+      </div>
+    </div>
+  </div>
+
+  <!-- Total Ruang -->
+  <div class="col">
+    <div class="summary-card p-4 text-center shadow-sm rounded border-start border-dark border-4 h-100">
       <div class="small text-muted fw-semibold mb-1">Total Ruang</div>
-      <div class="fw-bold text-dark fs-3">{{ summary.total }}</div>
+      <div class="fw-bold text-dark fs-3">
+        {{ summary.total | default(0) }}
+      </div>
       <div class="small text-muted">100%</div>
     </div>
   </div>
 
 </div>
-
-
 
 
 <!-- ========================= -->
