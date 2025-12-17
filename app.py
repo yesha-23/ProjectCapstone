@@ -309,6 +309,23 @@ def fig_penggunaan_kelas(df_ruang, df_matkul):
 # ============================================================
 # ROUTE
 # ============================================================
+@app.route("/")
+def index():
+    df_ruang, df_matkul = load_data("SEMUA")
+
+    summary = summary_cards(
+        df_matkul.merge(
+            df_ruang[["ruang", "kapasitas"]],
+            on="ruang",
+            how="left"
+        )
+    )
+
+    return render_template(
+        "index.html",
+        summary=summary
+    )
+
 @app.route("/dashboard")
 def dashboard():
     semester = request.args.get("semester", "SEMUA").upper()
