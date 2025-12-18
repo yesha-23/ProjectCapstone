@@ -204,10 +204,7 @@ def fig_efisiensi_hari_sesi(df_ruang, df_matkul, filter_hari="SEMUA"):
     return pio.to_html(fig, full_html=False, include_plotlyjs=False)
 
 # ============================================================
-# CHART 4 — Penggunaan Ruang (FIX FINAL)
-# ============================================================
-# ============================================================
-# CHART 4 — Penggunaan Ruang (FINAL: 2 DROPDOWN SAJA)
+# CHART 4 — Penggunaan Ruang
 # ============================================================
 def fig_penggunaan_kelas(df_ruang, df_matkul):
 
@@ -290,15 +287,15 @@ def fig_penggunaan_kelas(df_ruang, df_matkul):
         updatemenus=[
             {
                 "buttons": hari_buttons,
-                "x": 0.05,
-                "y": 1.2,
-                "xanchor": "left"
+                "x": 0.78,
+                "y": 1.18,
+                "xanchor": "right"
             },
             {
                 "buttons": sesi_buttons,
-                "x": 0.35,
-                "y": 1.2,
-                "xanchor": "left"
+                "x": 0.98,
+                "y": 1.18,
+                "xanchor": "right"
             }
         ]
     )
